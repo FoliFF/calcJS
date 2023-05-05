@@ -23,14 +23,14 @@ class Calculator{
   chooseOperation(operation) {
     if(this.currentOperand === '') return;
     if(this.previousOperand !== ''){
-      this.compute();
+      this.operate();
     }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = '';
   }
 
-  compute() {
+  operate() {
     let computation;
     const prev = parseFloat(this.previousOperand);
     const current = parseFloat(this.currentOperand);
@@ -108,7 +108,7 @@ operatorButtons.forEach(button => {
 });
 
 equalsButton.addEventListener('click', button => {
-  calculator.compute();
+  calculator.operate();
   calculator.updateDisplay();
 });
 
@@ -120,4 +120,27 @@ allClearButton.addEventListener('click', button => {
 deleteButton.addEventListener('click', button => {
   calculator.delete();
   calculator.updateDisplay();
+});
+
+// Add event listeners for keydown events
+document.addEventListener('keydown', event => {
+  if (event.key >= 0 && event.key <= 9) {
+    calculator.appendNumber(event.key);
+    calculator.updateDisplay();
+  } else if (event.key === '.') {
+    calculator.appendNumber('.');
+    calculator.updateDisplay();
+  } else if (event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/') {
+    calculator.chooseOperation(event.key);
+    calculator.updateDisplay();
+  } else if (event.key === 'Enter' || event.key === '=') {
+    calculator.operate();
+    calculator.updateDisplay();
+  } else if (event.key === 'Backspace') {
+    calculator.delete();
+    calculator.updateDisplay();
+  } else if (event.key === 'Escape') {
+    calculator.clear();
+    calculator.updateDisplay();
+  }
 });
