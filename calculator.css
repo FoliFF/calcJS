@@ -14,7 +14,7 @@
 body{
   padding: 0;
   margin: 0;
-  background-color: darkgray;
+  background-color: rgba(0,0,0, .7);
 }
 
 .calculator{
