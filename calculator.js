@@ -56,9 +56,9 @@ function operate() {
     default:
       return; // Prevents the operation from being performed if the operation is not defined
   }
-  currentOperand = result; 
-  operation = undefined; 
-  previousOperand = ''; 
+  currentOperand = result; // Set the current operand to the result
+  operation = undefined; // Reset the operation
+  previousOperand = ''; // Reset the previous operand
 }
 
 function chooseOperation(selectedOperation) { 

@@ -54,19 +54,21 @@ body{
   background-color: #000000;
   color: #fff;
   margin: 2px;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 
 .calculator > button[data-operation],
 .calculator > button[data-equals] {
   background-color: #f69906;
   color: white;
+  border-radius: 10px;
 }
 
 .calculator > button[data-all-clear],
 .calculator > button[data-delete] {
   background-color: rgba(255,255,255, .3);
   color: white;
+  border-radius: 10px;
 }
 
 .calculator > button:hover {
@@ -79,8 +81,6 @@ body{
 
 .calculator-display{
   grid-column: 1 / -1;
-  background-color: #000000;
-  border: 2px solid white;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
