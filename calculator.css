@@ -11,6 +11,20 @@
   font-weight: normal;
 }
 
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
 body{
   padding: 0;
   margin: 0;
@@ -22,9 +36,14 @@ body{
   display: grid;
   justify-content: center;
   align-content: center;
-  min-height: 100vh;
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  width: 420px;
+  border: solid 2px white;
+  margin: 0 auto;
+  background-color: #000000;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .calculator > button {
@@ -38,14 +57,14 @@ body{
   border-radius: 10px;
 }
 
-.calculator > button[data-operation] {
+.calculator > button[data-operation],
+.calculator > button[data-equals] {
   background-color: #f69906;
   color: white;
 }
 
 .calculator > button[data-all-clear],
-.calculator > button[data-delete],
-.calculator > button[data-equals] {
+.calculator > button[data-delete] {
   background-color: #a0a0a0;
   color: white;
 }
@@ -81,4 +100,18 @@ body{
 .calculator-display .current-operand{
   color: white;
   font-size: 2.5rem;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
